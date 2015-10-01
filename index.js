@@ -5,6 +5,7 @@ var xmlNodes = require('xml-nodes')
 var xmlObjects = require('xml-objects')
 var through2 = require('through2')
 var splitStyle = require('inline-style-2-json')
+var _ = require('lodash')
 
 var pdftk2json = function () {
   var all = []
@@ -31,7 +32,29 @@ var sortByLine = function () {
     if (err) {
       console.log('err', err)
     }
-    console.log(JSON.parse(data)[0])
+    var doc = []
+
+    // Group them by horizontal line
+    var hLineArr = _.groupBy(JSON.parse(data), function (obj) {
+      return Math.floor(obj.style.top)
+    })
+
+    // Flatten and join the lines
+    _.forEach(hLineArr, function (item) {
+      var line = ''
+      // If item[0] is at the same place as the previous hLineArr item[0]
+      // Assume they are in the same place
+      // if the last item is at the same place
+      // Assume they are in the same paragraph
+
+      // Join without ambiguity
+      item.forEach(function (char) {
+        line = line + char._
+      })
+      doc.push(line)
+    })
+
+    console.log(doc)
   })
 }
 

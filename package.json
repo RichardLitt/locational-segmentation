@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "inline-style-2-json": "^1.0.1",
+    "lodash": "^3.10.1",
     "meow": "^3.3.0",
     "through2": "^2.0.0"
   },
