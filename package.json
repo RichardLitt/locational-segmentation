@@ -1,0 +1,42 @@
+{
+  "name": "locational-segmentation",
+  "version": "0.0.0",
+  "description": "My fabulous module",
+  "license": "MIT",
+  "repository": "RichardLitt/locational-segmentation",
+  "author": {
+    "name": "Richard Littauer",
+    "email": "richard.littauer@gmail.com",
+    "url": "burntfen.com"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "inline-style-2-json": "^1.0.1",
+    "meow": "^3.3.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
