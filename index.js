@@ -21,8 +21,20 @@ var pdftk2json = function () {
       all.push(data)
     })
     .on('end', function (data) {
-      console.log(all)
+      console.log(JSON.stringify(all))
     })
 }
 
+var sortByLine = function () {
+  // console.log('Hi!')
+  fs.readFile(__dirname + '/examples/data.json', 'utf8', function (err, data) {
+    if (err) {
+      console.log('err', err)
+    }
+    console.log(JSON.parse(data)[0])
+  })
+}
+
+exports.sortByLine = module.exports.sortByLine = sortByLine
 exports.pdftk2json = module.exports.pdftk2json = pdftk2json
+
