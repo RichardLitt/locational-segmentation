@@ -39,18 +39,37 @@ var sortByLine = function () {
       return Math.floor(obj.style.top)
     })
 
+    var findCharWidth = function (hLineArr) {
+      // Find average gap of characters by looking at average amount of chars
+      // For the longest lines.
+      // Find longest groupings
+      console.log(hLineArr)
+    }
+
+    findCharWidth(hLineArr)
+
+    // To be used if the preceding line is the same paragraph as the
+    // current line
+    var recentLine = ''
+
     // Flatten and join the lines
     _.forEach(hLineArr, function (item) {
       var line = ''
+
+      // Assume all lines on the same horizontal plane are the same
+      // Unless there is a gap wider than three characters.
+      // Join without ambiguity
+      item.forEach(function (char) {
+        // If there are no gaps between lines
+        line = line + char._
+        // If there are gaps between lines larger than findCharWidth x3
+      })
+
       // If item[0] is at the same place as the previous hLineArr item[0]
       // Assume they are in the same place
       // if the last item is at the same place
       // Assume they are in the same paragraph
 
-      // Join without ambiguity
-      item.forEach(function (char) {
-        line = line + char._
-      })
       doc.push(line)
     })
 
