@@ -1,5 +1,7 @@
 # locational-segmentation [![Build Status](https://travis-ci.org/RichardLitt/locational-segmentation.svg?branch=master)](https://travis-ci.org/RichardLitt/locational-segmentation)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RichardLitt/locational-segmentation.svg)](https://greenkeeper.io/)
+
 > Naïvely isolate semantically and locationally similar text
 
 
